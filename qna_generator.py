@@ -1,8 +1,13 @@
 import google.generativeai as genai
 import json
+import os
+from dotenv import load_dotenv
 
-genai.configure(api_key="AIzaSyC1fJSTFyQbSkDUVavSQBDiDxO1EbJGb54")
+# Load environment variables from .env file
+load_dotenv()  
 
+# Configure Gemini with the key from .env
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 def generate_qna(topic):
     """Generates one question-answer pair with structured JSON output."""
     model = genai.GenerativeModel("gemini-1.5-flash")

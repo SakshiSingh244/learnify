@@ -1,8 +1,14 @@
 import google.generativeai as genai
 import json
 import time
+import os
+from dotenv import load_dotenv
 
-genai.configure(api_key="AIzaSyC1fJSTFyQbSkDUVavSQBDiDxO1EbJGb54")
+# Load environment variables from .env file
+load_dotenv()  
+
+# Configure Gemini with the key from .env
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 def get_chapters_and_topics(subject):
     """Get structured curriculum with validation."""

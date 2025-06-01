@@ -1,7 +1,13 @@
 from googleapiclient.discovery import build
+import os
+from dotenv import load_dotenv
 
 
-YOUTUBE_API_KEY = "AIzaSyAzXhdXjGUhUq5qXzBxYgDftTqzdhjFzKI"
+# Load environment variables from .env file
+load_dotenv()  
+
+# Configure Gemini with the key from .env
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 def get_top_youtube_video(topic):
 
