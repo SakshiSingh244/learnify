@@ -1,8 +1,42 @@
-﻿.env
+# Local additions (your original rules)
+.env
+.DS_Store
+
+# Python core (from GitHub template)
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 *.pyo
 *.pyd
-.DS_Store
+
+# Environments (combined from both)
 venv/
 env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Rest of GitHub's comprehensive Python template
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# [Keep all other rules from GitHub template...]
+# [Rest of the original GitHub template content goes here]
