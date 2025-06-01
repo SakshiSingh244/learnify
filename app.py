@@ -2,11 +2,11 @@ import google.generativeai as genai
 import json
 import time
 
-genai.configure(api_key="AIzaSyAv-Nf9CJcQcpB8k0vM4P_rLNng49FkBxk")
+genai.configure(api_key="AIzaSyC1fJSTFyQbSkDUVavSQBDiDxO1EbJGb54")
 
 def get_chapters_and_topics(subject):
     """Get structured curriculum with validation."""
-    model = genai.GenerativeModel("gemini-1.5-pro-latest")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     
     prompt = {
         "parts": [

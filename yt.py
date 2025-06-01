@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build
 
 
-YOUTUBE_API_KEY = "AIzaSyCOye24asZBN4IuGlNjrrZodTK4ydKeztA"
+YOUTUBE_API_KEY = "AIzaSyAzXhdXjGUhUq5qXzBxYgDftTqzdhjFzKI"
 
 def get_top_youtube_video(topic):
 

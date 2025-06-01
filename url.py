@@ -4,7 +4,7 @@ import re
 import time
 
 
-genai.configure(api_key="AIzaSyAv-Nf9CJcQcpB8k0vM4P_rLNng49FkBxk")
+genai.configure(api_key="AIzaSyC1fJSTFyQbSkDUVavSQBDiDxO1EbJGb54")
 
 
 UNWANTED_DOMAINS = ["amazon", "quora", "pinterest", "researchgate", "ieee", "sciencedirect", "wikipedia", "chegg"]
@@ -27,7 +27,7 @@ def filter_educational_urls(urls):
     if not filtered_urls:
         return [] 
 
-    model = genai.GenerativeModel("gemini-1.5-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     prompt = (
         "Here is a list of article URLs:\n\n"
         + "\n".join(filtered_urls) +
