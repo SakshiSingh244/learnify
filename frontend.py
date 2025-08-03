@@ -8,10 +8,9 @@ from qna_generator import generate_qna
 from database import save_roadmap, get_user_roadmaps
 
 def display_roadmap():
-    """Display the roadmap in the standard format (used for both new and loaded roadmaps)"""
     if "roadmap" not in st.session_state:
         return
-    
+
     st.subheader("📝 Your Study Plan")
     for chapter, topics in st.session_state["roadmap"].items():
         st.subheader(f"📖 {chapter}")
@@ -20,7 +19,7 @@ def display_roadmap():
             col1, col2, col3 = st.columns(3)
 
             with col1:
-                if st.button(f"🔗 Articles: {topic}", key=f"art_{topic}"):
+                if st.button(f"🔗 Articles: {topic}", key=f"art_{chapter}_{topic}"):
                     articles = get_top_articles(topic)
                     if articles:
                         for article in articles:
@@ -32,7 +31,7 @@ def display_roadmap():
                         st.write("No articles found.")
 
             with col2:
-                if st.button(f"▶ YouTube: {topic}", key=f"yt_{topic}"):
+                if st.button(f"▶ YouTube: {topic}", key=f"yt_{chapter}_{topic}"):
                     video_info = get_top_youtube_video(topic)
                     if "url" in video_info and video_info["url"]:
                         st.markdown(f"[🎥 {video_info['title']}]({video_info['url']})")
@@ -40,7 +39,7 @@ def display_roadmap():
                         st.write("No relevant video found.")
 
             with col3:
-                if st.button(f"📝 Q&A: {topic}", key=f"qna_{topic}"):
+                if st.button(f"📝 Q&A: {topic}", key=f"qna_{chapter}_{topic}"):
                     qna = generate_qna(topic)
                     if isinstance(qna, dict):
                         for q, a in qna.items():
@@ -49,6 +48,7 @@ def display_roadmap():
                             st.write("---")
                     else:
                         st.write("Failed to generate Q&A.")
+
 
 def main():
     st.title("📚 Study Roadmap Generator")
@@ -115,8 +115,9 @@ def main():
         else:
             st.warning("⚠️ Please enter a subject name.")
 
-    # Display roadmap if it exists in session state
-    display_roadmap()
+    # Only show the roadmap if it hasn't already been shown above
+    if selected_roadmap == "None" and "roadmap" in st.session_state:
+        display_roadmap()
 
 if __name__ == "__main__":
     main()
