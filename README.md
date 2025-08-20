@@ -1,8 +1,8 @@
 📚 Learnify – AI-Powered Study Roadmap Planner
-
+==============================================================================================================================================================================
 Learnify is an AI-powered study companion that helps students plan, learn, and track their study journey effectively. 🚀
 Just enter your subject and timeline, and Learnify creates a personalized roadmap with chapters, resources, and Q&A practice – all in one place.
-==========================================================================================================================================================================================================================================================================================================================
+============================================================================================================================================
 ✨ Features
 
 📅 AI Roadmap Generator – Creates a day-wise study plan based on subject & available days.
