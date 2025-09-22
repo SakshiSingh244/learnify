@@ -5,10 +5,10 @@ import time
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+
 load_dotenv()  
 
-# Configure Gemini with the key from .env
+
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 
